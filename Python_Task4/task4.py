@@ -7,22 +7,24 @@ def rev_str(data):
 
 
 # Taking string from user  “1234abcd”
-sample_text = rev_str(input("Enter the string"))
+sample_text=rev_str(input("Enter the string"))
 
 print(sample_text)
+
+
 # Output : dcba4321
 
 
 # Question_2:
 # checking upper and lower letters
 def check_letter(s):
-    upperCase_letters = 0
-    lowerCase_letters = 0
+    upperCase_letters=0
+    lowerCase_letters=0
     for letter in s:
         if letter.islower():
-            lowerCase_letters += 1
+            lowerCase_letters+=1
         elif letter.isupper():
-            upperCase_letters += 1
+            upperCase_letters+=1
     print("Number of Upper_Case letters = ", upperCase_letters)
     print("Number of Upper_Case letters = ", lowerCase_letters)
 
@@ -33,14 +35,14 @@ check_letter(input("Enter the string :"))
 # Question_3
 # a list and returns a new list with unique elements of the first list.
 def unique(li):
-    new_list = []
+    new_list=[]
     for x in li:
         if x not in new_list:
             new_list.append(x)
     return new_list
 
 
-y = unique(input("Enter the list :"))
+y=unique(input("Enter the list :"))
 
 print(y)
 
@@ -50,16 +52,16 @@ print(y)
 
 
 def hyphen_separated(user_data):
-    words = [word for word in user_data.split('-')]
+    words=[word for word in user_data.split('-')]
     print("Sorting the given words:")
     words.sort()
-    sequence = '-'.join(words)
+    sequence='-'.join(words)
     return sequence
 
 
 word=input("Enter a hyphen separated sequence of words:")
 
-word_order = hyphen_separated(word)
+word_order=hyphen_separated(word)
 print(word_order)
 
 
@@ -79,7 +81,7 @@ def sequence_upper():
             return li
 
 
-res = sequence_upper()
+res=sequence_upper()
 print(res)
 
 
@@ -115,14 +117,14 @@ compare_strings_len(s1=input("Enter the first String :"), s2=input("Enter the se
 
 # Question_8
 def square_values():
-    li = list()
+    li=list()
     for i in range(1, 21):
         li.append(i ** 2)
-        tup = tuple(li)
+        tup=tuple(li)
     return tup
 
 
-square_tup = square_values()
+square_tup=square_values()
 print(square_tup)
 
 
@@ -143,7 +145,7 @@ showNumbers(3)
 # Write a program which can filter() to make a list whose elements are even number between 1 and 20 ( both included)
 
 def check_filter():
-    L = list(filter((lambda x: x % 2 == 0), range(1, 21)))
+    L=list(filter((lambda x: x % 2 == 0), range(1, 21)))
     return L
 
 
@@ -158,25 +160,29 @@ sqr_num=list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, li)))
 
 print(sqr_num)
 
-
 # Question_12
 # Write a function to compute 5/0 and use try/except to catch the exceptions
 
-def try_fun():
-    x=5 / 0
-
-
 try:
-    try_fun()
+    def try_fun():
+        x=5 / 0
+        return x
+
+        res=try_fun()
+        print(res)
 except:
     print("Error dividing by Zero")
-import operator
+
+# Question_13
 from functools import reduce
 
-li = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
-res = reduce(operator.concat, li, [])
-print(res)
-new_str = reduce(lambda s,x:s+str(x),res,'')
+li=[[1, 2, 3], [4, 5], [6, 7, 8]]
+new_li=reduce(lambda x, y: x + y, li)
+print(new_li)
+# Convert into string
+new_str=""
+for i in new_li:
+    new_str+=str(i)
 print(new_str)
 
 
@@ -201,4 +207,4 @@ def a():
     print('after f?')
 
 
-a() # Output: NameError: name 'f' is not defined
+a()  # Output: NameError: name 'f' is not defined
